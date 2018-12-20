@@ -1,0 +1,57 @@
+
+
+Setting up ionic models and plugins
+-----------------------------------
+
+Assigning IMPS to tagged regions:  
+
+	Ionic model: MRG_Node to tag region(s) [1],.
+	Ionic model: MRG_Node to tag region(s) [2],.
+
+
+
+Building intracellular electric stiffness matrix in standard mode.
+Building intracellular electric stiffness matrix done in 0.008 seconds.
+Building intracellular electric lumped mass matrix in standard mode.
+Building intracellular electric lumped mass matrix done in 0.001 seconds.
+Building extracellular electric stiffness matrix in standard mode.
+Building extracellular electric stiffness matrix done in 0.030 seconds.
+Building extracellular electric lumped mass matrix in standard mode.
+Building extracellular electric lumped mass matrix done in 0.003 seconds.
+Elliptic lhs matrix enforcing Dirichlet boundaries.
+
+Elliptic lhs matrix Dirichlet enforcing done in 0.001 seconds.
+
+
+
+Affected Stimulus Volumes
+Type           (          Name) [Stimulus  ID]: Vol um^3 ( Vol mm^3 )
+-------------- ---------------- -------------- --------- ------------
+extra V (cl)   (Stimulus_0    ) [Stimulus   0]:       25 ( 2.5302e-08 )
+extra V (cl)   (Stimulus_1    ) [Stimulus   1]:       26 ( 2.6271e-08 )
+
+
+
+
+
+Current Injecting electrodes
+Type           (          Name) [ID]: Total [uA] Density
+-------------- ---------------- ----- ---------- --------------------
+
+
+
+  
+
+  Electrical Solver Timings:
+  --------------------------
+
+  Elliptic        900.77
+    --RHS           0.50
+    --Solve       900.28
+  Parabolic        22.38
+    --RHS           0.44
+    --Solve        21.94
+  ODE               1.32
+  Purkinje          0.00
+  IO                0.28
+

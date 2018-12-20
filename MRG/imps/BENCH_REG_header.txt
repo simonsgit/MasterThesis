@@ -1,0 +1,8 @@
+0  # is bigendian
+                BENCH_REG.Vm.bin       Real  8       1002
+              BENCH_REG.Iion.bin       Real  8       1002
+                 BENCH_REG.t.bin       Real  8       1002
+            BENCH_REG_MRG_Node.h   Gatetype  4       1002
+            BENCH_REG_MRG_Node.m   Gatetype  4       1002
+            BENCH_REG_MRG_Node.p   Gatetype  4       1002
+            BENCH_REG_MRG_Node.s   Gatetype  4       1002

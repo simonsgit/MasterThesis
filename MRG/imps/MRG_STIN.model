@@ -1,0 +1,18 @@
+V; .lookup(-200, 200, 0.05); .external(Vm); .nodal(); 
+Iion; .external(); .nodal();
+
+# Constants
+g_L = 0.1; .units(mS/cm^2);
+E_R = -80; .units(mV);
+Cm = 2; .units(uF/cm^2);
+# Constants
+
+# Initial values
+V_init = -80; .units(mV);
+
+#membrane
+Iion = i_L/Cm; .units(uA/uF);
+
+#leakage_current
+i_L = (g_L*(V - E_L)); .units(uA/cm^2);
+E_L = (E_R - 10.); .units(mV);

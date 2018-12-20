@@ -1,0 +1,48 @@
+V; .lookup(-200, 200, 0.05); .external(Vm); .nodal();
+Iion; .external(); .nodal();
+
+# Constants
+g_L = 20; .units(mS/cm^2);
+E_R = -80; .units(mV);
+g_Naf = 3000; .units(mS/cm^2);
+g_Nap = 10; .units(mS/cm^2);
+Cm = 2; .units(uF/cm^2);
+g_K = 80; .units(mS/cm^2);
+# Constants
+
+# Initial values
+V_init = -80; .units(mV);
+
+#membrane
+Iion = -((-(-0+i_Naf+i_Nap+i_K+i_L)/Cm)); .units(uA/uF);
+
+#fast_sodium_channel
+i_Naf = (g_Naf*(m*m*m)*h*(V - E_Na)); .units(uA/cm^2);
+E_Na = (E_R + 130.); .units(mV);
+
+#fast_sodium_channel_m_gate
+a_m = (fabs(-(V + 21.4)/10.3) < 0.000001) ? (7.11*10.3) : (7.11*(V + 21.4)/(1.-exp(-(V + 21.4)/10.3))); .units(unitless/ms);
+b_m = (fabs((V + 25.7)/9.16) < 0.000001) ? (0.329*9.16) : (0.329*(-(V + 25.7))/(1.-exp((V + 25.7)/9.16))); .units(unitless/ms);
+
+#sodium_channel_h_gate
+b_h = (14.1/(1+exp((V + 31.8)/(-13.4)))); .units(unitless/ms);
+a_h = (fabs((V + 114.)/11.) < 0.000001) ? (0.38*11.) : (0.38*(-(V + 114.))/(1.-exp((V + 114.)/11.))); .units(unitless/ms);
+
+#potassium_channel
+E_K = (E_R-10.); .units(mV);
+i_K = (g_K*s*(V - E_K)); .units(uA/cm^2);
+
+#slow_potassium_channel_n_gate
+a_s = 0.3348/(1.+exp((V + 53.)/(-5.))); .units(unitless/ms);
+b_s = 0.03348/(1+exp((V + 90.)/(-1.))); .units(unitless/ms);
+
+#pers_sodium_channel
+i_Nap = (g_Nap*(p*p*p)*(V - E_Na)); .units(uA/cm^2);
+
+#pers_sodium_channel_p_gate
+a_p = (fabs((V+27.)/10.2) < 0.000001) ? (0.0382*10.2) : (0.0382*(V+27.)/(1.-exp(-(V+27.)/10.2))); .units(unitless/ms);
+b_p = (fabs((V+34.)/10.) < 0.000001) ? (0.000955*10.) : (0.000955*(-(V+34.))/(1.-exp((V+34.)/10.))); .units(unitless/ms);
+
+#leakage_current
+i_L = (g_L*(V - E_L)); .units(uA/cm^2);
+E_L = (E_R - 10.); .units(mV);
